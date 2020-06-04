@@ -104,6 +104,7 @@ So run below script to open developermenu
 - add debugger in code
 - put break point on the chrome tool to
 
+
 ### Chapter-8-style-differently-for-ios-and-android 
 
 ### Requirement 
@@ -114,6 +115,7 @@ So run below script to open developermenu
 - How to use single style for ios and android
 - Creating style files for ios and android and how platform picks the file automatically
 - How to create 2 components and let platform render based on the ios or android device?
+  
 
 `Platform.OS === 'ios' ? { padding: 20, paddingTop: 30 } : {},`
- 
+

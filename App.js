@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, TextInput, View } from 'react-native';
-import HeaderStyles from './HeaderStyle';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import Header from './Header';
 
 const restaurants = [
   { name: 'React Cafe', address: '123 Anywhere St' },
@@ -33,14 +33,9 @@ export default class App extends Component {
   };
 
   render() {
-    const headerStyle = Platform.select({
-      ios: HeaderStyles.iOSHeader,
-      android: HeaderStyles.header,
-    });
-
     return (
       <View style={{ flex: 1 }}>
-        <Text style={headerStyle}>Restaurant Review</Text>
+        <Header />
         <TextInput
           value={this.state.search}
           style={styles.input}
