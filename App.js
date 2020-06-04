@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import HeaderStyles from './HeaderStyle';
 
 const restaurants = [
@@ -25,37 +25,61 @@ const restaurants = [
   { name: 'Salads and More', address: '2454 Preston St' },
 ];
 
-export default function App() {
-  return (
-    <View style={{ flex: 1 }}>
-      <Text style={HeaderStyles.header}>Restaurant Review</Text>
-      {restaurants.map((place, index) => {
-        return (
-          <View
-            key={place.name}
-            style={[
-              styles.row,
-              {
-                backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
-              },
-            ]}
-          >
-            <View style={styles.edges}>
-              <Text>{index + 1}</Text>
-            </View>
+export default class App extends Component {
+  state = {
+    search: null,
+  };
 
-            <View style={styles.nameAddress}>
-              <Text>{place.name}</Text>
-              <Text style={styles.address}>{place.address}</Text>
-            </View>
-            <View style={styles.edges}>
-              <Text>Info</Text>
-            </View>
-          </View>
-        );
-      })}
-    </View>
-  );
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Text style={HeaderStyles.header}>Restaurant Review</Text>
+        <TextInput
+          value={this.state.search}
+          style={styles.input}
+          placeholder='Live Search'
+          onChangeText={(text) => {
+            this.setState({ search: text });
+          }}
+        />
+
+        {restaurants
+          .filter((place) => {
+            return (
+              !this.state.search ||
+              place.name
+                .toLowerCase()
+                .indexOf(this.state.search.toLowerCase()) > -1
+            );
+          })
+          .map((place, index) => {
+            return (
+              <View
+                key={place.name}
+                style={[
+                  styles.row,
+                  {
+                    backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
+                  },
+                ]}
+              >
+                <View style={styles.edges}>
+                  <Text>{index + 1}</Text>
+                </View>
+
+                <View style={styles.nameAddress}>
+                  <Text>{place.name}</Text>
+                  <Text style={styles.address}>{place.address}</Text>
+                </View>
+                <View style={styles.edges}>
+                  <Text>Info</Text>
+                </View>
+              </View>
+            );
+          })}
+      </View>
+    );
+  }
 }
 const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
@@ -67,4 +91,14 @@ const styles = StyleSheet.create({
   },
   nameAddress: { flexDirection: 'column', flex: 8 },
   address: { color: 'grey' },
+  input: {
+    marginBottom: 30,
+    padding: 10, // vertical padding
+    paddingHorizontal: 20, // left and right side
+    fontSize: 16,
+    color: '#444',
+    borderBottomWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#F5F5F5',
+  },
 });

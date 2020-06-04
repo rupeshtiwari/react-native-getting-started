@@ -24,3 +24,18 @@
   - `style={[styles.row,{ backgroundColor:index%2===0?'white':'#F3F3F7' }]}`
 - Create a style JS file and use in component
 
+### Chapter-5 Accept User Input with RN TextInput
+
+#### Requirement
+
+- Create Search Box
+- Filter Restaurant by live search
+- Add placeholder text
+- Display the restaurant if 
+  - search text is blank
+  - OR the search text match with name of restaurant.
+#### Learning
+
+- Styling `border` is different than react in react native. You have declare `borderWidth` and `borderColor` separately.
+- `onChange` prop is in react component. However in React Native component you have `onChangeText` prop and nice thing is it will give u the `text` in the callback instead of `event` like in react component.
+-
