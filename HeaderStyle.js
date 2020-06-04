@@ -8,4 +8,11 @@ export default StyleSheet.create({
     color: '#0066CC',
     fontWeight: '300',
   },
+  iOSHeader: {
+    padding: 30,
+    fontSize: 10,
+    textAlign: 'center',
+    color: '#0066CC',
+    fontWeight: '300',
+  }
 });

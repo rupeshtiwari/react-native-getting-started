@@ -50,13 +50,14 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 #### Requirement
 
 - Enable Developer Menu on android simulator
-- Debug in Chrome 
+- Debug in Chrome
 - Show console logs in chrome dev tool
 - Disable Yellow log on app
 - How to log errors
-- Show the stack trace, open the line number of the error occurred. 
+- Show the stack trace, open the line number of the error occurred.
 
 #### Learning
+
 - How to Debug on Chrome devtool
 - How to disable yellow log on app
 - How to log errors.
@@ -78,29 +79,41 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
 - How to enable shortcut key forwarding to Virtual device?
 - ![](https://i.imgur.com/WYytrll.png)
-- Now If you click `Control M` then it should show the option for developer. 
-  
+- Now If you click `Control M` then it should show the option for developer.
 
-  Currently there is a bug in android emulator it does not show  developer menu with `CTRL M` 
-  So run below script to open developermenu
+Currently there is a bug in android emulator it does not show developer menu with `CTRL M`
+So run below script to open developermenu
 
-  `adb shell input keyevent 82`
-  ![](https://i.imgur.com/RdzEqbI.png)
+`adb shell input keyevent 82`
+![](https://i.imgur.com/RdzEqbI.png)
 
-  `console.disableYellowBox = true;`
-
+`console.disableYellowBox = true;`
 
 ### chapter-7 Use debugger in react native app
 
 #### Learning
+
 - How to activate debugger
-- How to investigate bugs? 
+- How to investigate bugs?
 - How to see all the values in current scope
-- Test certain variable value 
-- Change their value and render live in App 
-- How to add a watch statement 
+- Test certain variable value
+- Change their value and render live in App
+- How to add a watch statement
 - How to automatically pause on exception.
 - Scope pane in debugger
-- add debugger in code 
-- put break point on the chrome tool to 
+- add debugger in code
+- put break point on the chrome tool to
+
+### Chapter-8-style-differently-for-ios-and-android 
+
+### Requirement 
+- Style different for ios and android
+
+### Learning
+- How to use react-native platform to decide ios or android
+- How to use single style for ios and android
+- Creating style files for ios and android and how platform picks the file automatically
+- How to create 2 components and let platform render based on the ios or android device?
+
+`Platform.OS === 'ios' ? { padding: 20, paddingTop: 30 } : {},`
  
