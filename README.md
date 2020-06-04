@@ -127,5 +127,8 @@ So run below script to open developermenu
 - Organize Styles
 - Do not use absolute paths 
 
-
-
+### Chapter-10-Scroll-Elements-on-React-NativeScreen-ScrollView
+#### Requirement 
+- Add scrolling to the list
+- Dont scroll header and search text. 
+- While scrolling till end make sure you dont show the space between first row and the search text.
