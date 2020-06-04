@@ -31,11 +31,39 @@
 - Create Search Box
 - Filter Restaurant by live search
 - Add placeholder text
-- Display the restaurant if 
+- Display the restaurant if
   - search text is blank
   - OR the search text match with name of restaurant.
+
 #### Learning
 
 - Styling `border` is different than react in react native. You have declare `borderWidth` and `borderColor` separately.
 - `onChange` prop is in react component. However in React Native component you have `onChangeText` prop and nice thing is it will give u the `text` in the callback instead of `event` like in react component.
 -
+
+### Chapter-5 Write Console Log
+
+#### Requirement
+
+- Enable Developer Menu on android simulator
+
+#### Learning
+
+- How to enable developer menu by in android simulator?
+- how to open developer menu in android emulator?
+- How do I shake in android simulator?
+- How to send the keyboard shortcut to virtual device on android simulator?
+
+* How to enable Developer option?  
+  Answer:
+
+  - Control M on window
+  - Shake the simulator
+
+* Go to Phone Settings
+  - About Emulated Device
+  - Build Number
+    - Tap on Build number option 7 times and then developer options and then a toast will be shown saying “You're now a developer.”
+
+- How to enable shortcut key forwarding to Virtual device?
+- ![](https://i.imgur.com/WYytrll.png)
