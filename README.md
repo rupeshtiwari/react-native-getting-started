@@ -136,3 +136,14 @@ So run below script to open developermenu
 #### Learning
 - `contentContainerStyle` of scrollview
 - Performance is poor when you want to load large list using `scrollView`
+
+### Chapter-11-Display-List-Using FlatList
+#### Requirement 
+- Render item on demand when u scroll the view.
+- Reduce Flicker while u scroll
+#### Learning
+- `scrollView` loads entire view in the memory and slows down the app good for 20-30 items
+- each item directly render inline in `scrollview`
+- `flatlist` designed to performance for 100 or 1000 of items.
+- `flatlist` progressively loads the items 
+- `flatList` it recycles the view so it lowers the memory footprints as you scroll. 

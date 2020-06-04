@@ -1,6 +1,7 @@
 import Header from 'components/Header';
+import RestaurantRow from 'components/RestaurantRow';
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, StyleSheet, TextInput, View } from 'react-native';
 
 const restaurants = [
   { name: 'React Cafe', address: '123 Anywhere St' },
@@ -44,56 +45,26 @@ export default class App extends Component {
             this.setState({ search: text });
           }}
         />
-        <ScrollView contentContainerStyle={{ paddingTop: 30 }}>
-          {restaurants
-            .filter((place) => {
-              return (
-                !this.state.search ||
-                place.name
-                  .toLowerCase()
-                  .indexOf(this.state.search.toLowerCase()) > -1
-              );
-            })
-            .map((place, index) => {
-              return (
-                <View
-                  key={place.name}
-                  style={[
-                    styles.row,
-                    {
-                      backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
-                    },
-                  ]}
-                >
-                  <View style={styles.edges}>
-                    <Text>{index + 1}</Text>
-                  </View>
-
-                  <View style={styles.nameAddress}>
-                    <Text>{place.name}</Text>
-                    <Text style={styles.address}>{place.address}</Text>
-                  </View>
-                  <View style={styles.edges}>
-                    <Text>Info</Text>
-                  </View>
-                </View>
-              );
-            })}
-        </ScrollView>
+        <FlatList
+          data={restaurants.filter((place) => {
+            return (
+              !this.state.search ||
+              place.name
+                .toLowerCase()
+                .indexOf(this.state.search.toLowerCase()) > -1
+            );
+          })}
+          renderItem={({ item, index }) => (
+            <RestaurantRow place={item} index={index} />
+          )}
+          keyExtractor={(item) => item.name}
+        />
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row' },
-  edges: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 5,
-  },
-  nameAddress: { flexDirection: 'column', flex: 8 },
-  address: { color: 'grey' },
   input: {
     padding: 10, // vertical padding
     paddingHorizontal: 20, // left and right side
