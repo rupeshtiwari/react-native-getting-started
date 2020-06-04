@@ -1,25 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Restaurant Review App</Text>
+    <View>
+      <Text
+        style={{
+          padding: 40,
+          fontSize: 30,
+          textAlign: 'center',
+          color: '#0066CC',
+          fontWeight: '300',
+        }}
+      >
+        Restaurant Review
+      </Text>
+
+      <Text>React Cafe</Text>
+      <Text style={{ color: 'grey' }}>123 Anywhere St</Text>
+      <Text> Fancy Restaurant</Text>
+      <Text style={{ color: 'grey' }}>799 Main St</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
