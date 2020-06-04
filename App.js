@@ -33,7 +33,7 @@ export default class App extends Component {
   };
 
   render() {
-    console.error(`Search: ${this.state.search}`)
+ 
     return (
       <View style={{ flex: 1 }}>
         <Text style={HeaderStyles.header}>Restaurant Review</Text>

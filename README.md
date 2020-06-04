@@ -90,5 +90,17 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
   `console.disableYellowBox = true;`
 
 
+### chapter-7 Use debugger in react native app
 
-
+#### Learning
+- How to activate debugger
+- How to investigate bugs? 
+- How to see all the values in current scope
+- Test certain variable value 
+- Change their value and render live in App 
+- How to add a watch statement 
+- How to automatically pause on exception.
+- Scope pane in debugger
+- add debugger in code 
+- put break point on the chrome tool to 
+ 
