@@ -119,3 +119,13 @@ So run below script to open developermenu
 
 `Platform.OS === 'ios' ? { padding: 20, paddingTop: 30 } : {},`
 
+
+### Chapter-9-Folder-Structure-In-React-Native-App
+
+#### Requirement 
+- Organize components
+- Organize Styles
+- Do not use absolute paths 
+
+
+
