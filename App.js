@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import HeaderStyles from './HeaderStyle';
 
 const restaurants = [
   { name: 'React Cafe', address: '123 Anywhere St' },
@@ -26,42 +27,28 @@ const restaurants = [
 
 export default function App() {
   return (
-    <View style={{ backgroundColor: 'orange', flex: 1 }}>
-      <Text
-        style={{
-          padding: 40,
-          fontSize: 30,
-          textAlign: 'center',
-          color: '#0066CC',
-          fontWeight: '300',
-        }}
-      >
-        Restaurant Review
-      </Text>
+    <View style={{ flex: 1 }}>
+      <Text style={HeaderStyles.header}>Restaurant Review</Text>
       {restaurants.map((place, index) => {
         return (
-          <View key={place.name} style={{ flexDirection: 'row' }}>
-            <View
-              style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
+          <View
+            key={place.name}
+            style={[
+              styles.row,
+              {
+                backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
+              },
+            ]}
+          >
+            <View style={styles.edges}>
               <Text>{index + 1}</Text>
             </View>
 
-            <View style={{ flexDirection: 'column', flex: 8 }}>
+            <View style={styles.nameAddress}>
               <Text>{place.name}</Text>
-              <Text style={{ color: 'grey' }}>{place.address}</Text>
+              <Text style={styles.address}>{place.address}</Text>
             </View>
-            <View
-              style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
+            <View style={styles.edges}>
               <Text>Info</Text>
             </View>
           </View>
@@ -70,3 +57,14 @@ export default function App() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  row: { flexDirection: 'row' },
+  edges: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+  },
+  nameAddress: { flexDirection: 'column', flex: 8 },
+  address: { color: 'grey' },
+});
