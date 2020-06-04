@@ -1,4 +1,8 @@
-# React Native Getting Started
+## React Native Getting Started
+
+### Environment Setup
+
+https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
 ### Chapter-2 Display formated text
 
@@ -46,9 +50,16 @@
 #### Requirement
 
 - Enable Developer Menu on android simulator
+- Debug in Chrome 
+- Show console logs in chrome dev tool
+- Disable Yellow log on app
+- How to log errors
+- Show the stack trace, open the line number of the error occurred. 
 
 #### Learning
-
+- How to Debug on Chrome devtool
+- How to disable yellow log on app
+- How to log errors.
 - How to enable developer menu by in android simulator?
 - how to open developer menu in android emulator?
 - How do I shake in android simulator?
@@ -67,3 +78,17 @@
 
 - How to enable shortcut key forwarding to Virtual device?
 - ![](https://i.imgur.com/WYytrll.png)
+- Now If you click `Control M` then it should show the option for developer. 
+  
+
+  Currently there is a bug in android emulator it does not show  developer menu with `CTRL M` 
+  So run below script to open developermenu
+
+  `adb shell input keyevent 82`
+  ![](https://i.imgur.com/RdzEqbI.png)
+
+  `console.disableYellowBox = true;`
+
+
+
+

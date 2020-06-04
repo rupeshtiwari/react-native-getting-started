@@ -25,12 +25,15 @@ const restaurants = [
   { name: 'Salads and More', address: '2454 Preston St' },
 ];
 
+console.disableYellowBox = true;
+
 export default class App extends Component {
   state = {
     search: null,
   };
 
   render() {
+    console.error(`Search: ${this.state.search}`)
     return (
       <View style={{ flex: 1 }}>
         <Text style={HeaderStyles.header}>Restaurant Review</Text>
