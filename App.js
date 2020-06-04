@@ -44,7 +44,7 @@ export default class App extends Component {
             this.setState({ search: text });
           }}
         />
-        <ScrollView>
+        <ScrollView contentContainerStyle={{ paddingTop: 30 }}>
           {restaurants
             .filter((place) => {
               return (
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
   nameAddress: { flexDirection: 'column', flex: 8 },
   address: { color: 'grey' },
   input: {
-    
     padding: 10, // vertical padding
     paddingHorizontal: 20, // left and right side
     fontSize: 16,

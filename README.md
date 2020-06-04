@@ -132,3 +132,7 @@ So run below script to open developermenu
 - Add scrolling to the list
 - Dont scroll header and search text. 
 - While scrolling till end make sure you dont show the space between first row and the search text.
+
+#### Learning
+- `contentContainerStyle` of scrollview
+- Performance is poor when you want to load large list using `scrollView`
