@@ -58,6 +58,7 @@ export default class App extends Component {
             <RestaurantRow place={item} index={index} />
           )}
           keyExtractor={(item) => item.name}
+          initialNumToRender={16}
         />
       </View>
     );
