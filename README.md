@@ -156,5 +156,14 @@ So run below script to open developermenu
 
 #### Learning
 - The React Native Button works fine but it is not fully custamizable. It has not many configuration options. 
-- Therefore, we should use buttons like
+- Therefore, we should use fullly customizable touchable buttons like
+  - TouchableOpacity
+  - TouchableHighlight
+  - TouchableWithoutFeedback
+- In React you can use label and style it and make your own button
+  However in React-Native not every element is touchable. 
+
+- TouchableOpacity  
+  - Restrictions: We can not style the Text within TouchableOpacity 
+  - Therefore, remember to style your text separately. 
 

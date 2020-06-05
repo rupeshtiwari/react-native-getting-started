@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default class RestaurantRow extends Component {
   state = {
@@ -27,12 +27,9 @@ export default class RestaurantRow extends Component {
             <Text style={styles.address}>{place.address}</Text>
           </View>
           <View style={styles.edges}>
-            <Button
-              title='Info'
-              onPress={this.infoPressed}
-              color='#C93F'
-              accessibilityLabel='Info'
-            />
+            <TouchableOpacity onPress={this.infoPressed} style={styles.button}>
+              <Text style={styles.buttonText}>Info</Text>
+            </TouchableOpacity>
           </View>
         </View>
         {this.state.showInfo && (
@@ -63,5 +60,17 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#ddd',
     backgroundColor: '#F5F5F5',
+  },
+  button: {
+    borderWidth: 1,
+    borderColor: '#0066cc',
+    borderRadius: 14,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    backgroundColor: '#fff',
+  },
+  buttonText: {
+    color: '#0066CC',
+    fontSize: 12,
   },
 });
