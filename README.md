@@ -262,4 +262,5 @@ So run below script to open developermenu
 #### Learning
 
 - We need `Image` component to render image.
-- 
+- In React Native image will not load
+  unless you define the dimensions of the images. 

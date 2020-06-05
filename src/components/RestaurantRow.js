@@ -1,5 +1,12 @@
+import Constants from 'expo-constants';
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 
 export default class RestaurantRow extends Component {
   state = {
@@ -7,6 +14,12 @@ export default class RestaurantRow extends Component {
   };
 
   infoPressed = () => this.setState({ showInfo: !this.state.showInfo });
+
+  getImageUri(imageName) {
+    return Constants.isDevice
+      ? `http://rupesh-home-pc:3000/images/${imageName}`
+      : `http://10.0.2.2:3000/images/${imageName}`;
+  }
 
   render() {
     const { place, index } = this.props;
@@ -39,6 +52,14 @@ export default class RestaurantRow extends Component {
         {this.state.showInfo && (
           <View style={styles.info}>
             <Text>Restaurant Info</Text>
+            <Image
+              source={{
+                uri: this.getImageUri(place.image),
+                width: 100,
+                height: 100,
+              }}
+              
+            ></Image>
           </View>
         )}
       </View>
@@ -84,6 +105,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius:4
+    borderRadius: 4,
   },
 });
