@@ -1,8 +1,10 @@
+import axios from 'axios';
 import Header from 'components/Header';
 import RestaurantRow from 'components/RestaurantRow';
 import Constants from 'expo-constants';
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, TextInput, View } from 'react-native';
+
 console.disableYellowBox = true;
 
 export default class App extends Component {
@@ -19,13 +21,13 @@ export default class App extends Component {
     return !Constants.isDevice;
   }
   componentDidMount() {
-    fetch(
-      this.isSimulator()
-        ? 'http://10.0.2.2:3000/restaurants'
-        : 'http://rupesh-home-pc:3000/restaurants'
-    )
-      .then((response) => response.json())
-      .then((result) => this.setState({ restaurants: result }));
+    axios
+      .get(
+        this.isSimulator()
+          ? 'http://10.0.2.2:3000/restaurants'
+          : 'http://rupesh-home-pc:3000/restaurants'
+      )
+      .then((result) => this.setState({ restaurants: result.data }));
   }
 
   render() {

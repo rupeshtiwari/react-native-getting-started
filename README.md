@@ -238,6 +238,9 @@ So run below script to open developermenu
     - Run `npm start`
 
   - **Option 2 use expo contants library**
-  -
+    - Run `expo install expo-constants`
+    - I will use this! 
 
-* Fetch has problems with cookies on react native. Therefore, we should use `axios`
+- **Fetch has problems with cookies on react native. Therefore, we should use `axios`**
+  - works nice with cookies
+  - it parses the response to json out of the box. 
