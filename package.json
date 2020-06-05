@@ -7,9 +7,10 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "menu": "adb shell input keyevent 82",
-    "server":"cd server && npm start && cd.."
+    "server": "cd server && npm start && cd.."
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.2.0",
     "axios": "^0.19.2",
     "expo": "~37.0.3",
     "expo-constants": "~9.0.0",

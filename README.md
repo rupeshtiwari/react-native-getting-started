@@ -257,10 +257,20 @@ So run below script to open developermenu
 #### Requirement
 
 - Display image from local folder
-- Display image from server which is not in the source code bundle 
+- Display image from server which is not in the source code bundle
 
 #### Learning
 
 - We need `Image` component to render image.
 - In React Native image will not load
-  unless you define the dimensions of the images. 
+  unless you define the dimensions of the images.
+
+### Chapter-15 Add Icons using expo vector-icons
+
+#### Requirement
+
+- Show the stars for each restaurant
+
+#### Learning
+
+- `expo vector-icons`
