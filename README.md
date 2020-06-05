@@ -162,6 +162,7 @@ So run below script to open developermenu
 - Create info button
 - Show Restaurant details on info button click
 - Create fully customizable styled button.
+- styled button and styled viiew toggle on and off
 
 #### Learning
 
