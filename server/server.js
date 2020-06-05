@@ -148,7 +148,7 @@ app
     ]);
   })
   .get('/images/:image', (req, res) => {
-    res.sendfile(`${__dirname}/shapes/${req.params.image}`);
+    res.sendFile(`${__dirname}/shapes/${req.params.image}`);
   })
   .post('/review', (req, res) => {
     setTimeout(() => {

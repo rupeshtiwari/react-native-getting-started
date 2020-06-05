@@ -4,6 +4,29 @@
 
 https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
+#### Tips on android emulator
+
+- **If app is keep spinning then do what?**
+  - check for errors in chrome dev tool
+  - Revert your recent changes and go back to the change when your app was working. Restart app and then do one by one change and try to find out which line of code is breaking your app.
+  - or stop process and again run android from terminal
+- **When you install new package**
+
+  - Before installing any npm package
+    - stop server by killing any running process in vs code terminal
+    - stop android by killing any running process in vs code terminal
+  - then run `npm start` again
+
+- **Why Expo?**
+  - React Native will not give you official libraries for other features.
+  - Expo has large set of inbuild official libraries tested works great compare to other 3rd party libraries.
+  - No linking requirement ( React Native is working on this also)
+    When you install any native npm package you have to manually link your react-native 
+    to that npm package by running linking command. That some times doesnot work. However, Expo does it out of the box if you use `expo install` command to install one of the expo packages.
+  - Example in order to know if you are in simulator or not you have ton install 3rd party which sometimes not working installation is also not that easy. However with expo it is very fast installation and it worked too!
+
+  - I prefer to use expo that is why
+
 ### Chapter-2 Display formated text
 
 - only Text can be nested within the Text component.
@@ -194,4 +217,27 @@ So run below script to open developermenu
 
 ### Chapter-13-fetch-data-from-server-in-react-native-using-fetch-or-axios
 
+#### Requirement
 
+- get data from server and show
+- make sure server call is also working in emulator and mobile.
+
+#### Learning
+
+- ios simulator localhost works
+- android emulator it has its own ip adress so `localhost:3000` wont work.
+- `http://rupesh-home-pc:3000/restaurants` will work on mobile
+  while debugging from expo
+- `http://10.0.2.2:3000/restaurants` will work on your computer when you are debugging in android simulator.
+- **How to know if you are running app in emulator?**
+
+  - **Option 2 use 3rd party library**
+  - We will use `npm install --save react-native-device-info` to know if code is runnning on emulator or not.
+
+    - Run `react-native link react-native-device-info` in the project root.
+    - Run `npm start`
+
+  - **Option 2 use expo contants library**
+  -
+
+* Fetch has problems with cookies on react native. Therefore, we should use `axios`
