@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 
+
 export default class RestaurantRow extends Component {
   state = {
     showInfo: false,

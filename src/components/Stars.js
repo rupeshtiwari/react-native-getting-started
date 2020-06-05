@@ -4,12 +4,12 @@ import { StyleSheet, View } from 'react-native';
 
 export default function Stars({ rating = 3.5 }) {
   const stars = [...Array(Math.ceil(rating))];
-  console.log(stars);
+
   return (
     <View style={styles.stars}>
       {stars.map((_, i) => {
         const name = Math.floor(rating) > i ? 'star' : 'star-half';
-        return <FontAwesome name={name} size={15} color='#FFD64C' />;
+        return <FontAwesome key={i} name={name} size={15} color='#FFD64C' />;
       })}
     </View>
   );
