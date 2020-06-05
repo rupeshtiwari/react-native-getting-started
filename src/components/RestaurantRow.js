@@ -1,3 +1,4 @@
+import Stars from 'components/Stars';
 import Constants from 'expo-constants';
 import React, { Component } from 'react';
 import {
@@ -31,10 +32,7 @@ export default class RestaurantRow extends Component {
         }}
       >
         <View style={styles.row}>
-          <View style={styles.edges}>
-            <Text>{index + 1}</Text>
-          </View>
-
+          <Stars rating={place.rating} />
           <View style={styles.nameAddress}>
             <Text>{place.name}</Text>
             <Text style={styles.address}>{place.address}</Text>
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
   address: { color: 'grey' },
   input: {
     padding: 10, // vertical padding
-    paddingHorizontal: 20, // left and right side
+    paddingHorizontal: 15, // left and right side
     fontSize: 16,
     color: '#444',
     borderBottomWidth: 1,
@@ -108,5 +106,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 4,
+  },
+  stars: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 5,
+    minWidth: 50,
   },
 });
