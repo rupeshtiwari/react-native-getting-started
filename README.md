@@ -309,8 +309,5 @@ So run below script to open developermenu
 
 #### Learning
 - https://reactnavigation.org/docs/stack-navigator/
-- Run `yarn add @react-navigation/stack`
-- Run `yarn add @react-native-community/masked-view`
-- Run `yarn add react-native-safe-area-context`
-- Run `yarn add react-native-gesture-handler`
-- Run `yarn add react-native-reanimated react-native-screens`
+- In order to make stack working run below scripts
+- Run `yarn add @react-native-community/masked-view @react-navigation/bottom-tabs @react-navigation/native  react-native-safe-area-context react-native-screens @react-navigation/drawer react-native-reanimated @react-navigation/material-bottom-tabs react-native-paper @react-navigation/material-top-tabs react-native-tab-view @react-navigation/stack`
