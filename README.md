@@ -18,10 +18,11 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
   - then run `npm start` again
 
 - **Why Expo?**
+
   - React Native will not give you official libraries for other features.
   - Expo has large set of inbuild official libraries tested works great compare to other 3rd party libraries.
   - No linking requirement ( React Native is working on this also)
-    When you install any native npm package you have to manually link your react-native 
+    When you install any native npm package you have to manually link your react-native
     to that npm package by running linking command. That some times doesnot work. However, Expo does it out of the box if you use `expo install` command to install one of the expo packages.
   - Example in order to know if you are in simulator or not you have ton install 3rd party which sometimes not working installation is also not that easy. However with expo it is very fast installation and it worked too!
 
@@ -239,8 +240,15 @@ So run below script to open developermenu
 
   - **Option 2 use expo contants library**
     - Run `expo install expo-constants`
-    - I will use this! 
+    - I will use this!
 
 - **Fetch has problems with cookies on react native. Therefore, we should use `axios`**
   - works nice with cookies
-  - it parses the response to json out of the box. 
+  - it parses the response to json out of the box.
+
+### Chapter-14-Display Remote and Local Image
+
+#### Requirement
+
+- Display image from local folder
+- Display image from server
