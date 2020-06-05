@@ -147,3 +147,14 @@ So run below script to open developermenu
 - `flatlist` designed to performance for 100 or 1000 of items.
 - `flatlist` progressively loads the items 
 - `flatList` it recycles the view so it lowers the memory footprints as you scroll. 
+
+
+### Chapter-12 Make Touchable button React Native
+#### Requirement
+- Create info button
+- Show Restaurant details on info button click
+
+#### Learning
+- The React Native Button works fine but it is not fully custamizable. It has not many configuration options. 
+- Therefore, we should use buttons like
+

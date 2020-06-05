@@ -1,31 +1,45 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default class RestaurantRow extends Component {
+  state = {
+    showInfo: false,
+  };
+
+  infoPressed = () => this.setState({ showInfo: !this.state.showInfo });
+
   render() {
     const { place, index } = this.props;
-
     return (
       <View
         key={place.name}
-        style={[
-          styles.row,
-          {
-            backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
-          },
-        ]}
+        style={{
+          backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7',
+        }}
       >
-        <View style={styles.edges}>
-          <Text>{index + 1}</Text>
-        </View>
+        <View style={styles.row}>
+          <View style={styles.edges}>
+            <Text>{index + 1}</Text>
+          </View>
 
-        <View style={styles.nameAddress}>
-          <Text>{place.name}</Text>
-          <Text style={styles.address}>{place.address}</Text>
+          <View style={styles.nameAddress}>
+            <Text>{place.name}</Text>
+            <Text style={styles.address}>{place.address}</Text>
+          </View>
+          <View style={styles.edges}>
+            <Button
+              title='Info'
+              onPress={this.infoPressed}
+              color='#C93F'
+              accessibilityLabel='Info'
+            />
+          </View>
         </View>
-        <View style={styles.edges}>
-          <Text>Info</Text>
-        </View>
+        {this.state.showInfo && (
+          <View>
+            <Text>Restaurant Info</Text>
+          </View>
+        )}
       </View>
     );
   }
@@ -37,6 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 5,
+    minWidth: 50,
   },
   nameAddress: { flexDirection: 'column', flex: 8 },
   address: { color: 'grey' },
