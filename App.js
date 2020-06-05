@@ -2,8 +2,9 @@ import axios from 'axios';
 import Header from 'components/Header';
 import RestaurantRow from 'components/RestaurantRow';
 import Constants from 'expo-constants';
+import PizzaImage from 'images/pizza.png';
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, TextInput, View } from 'react-native';
+import { FlatList, Image, StyleSheet, TextInput, View } from 'react-native';
 
 console.disableYellowBox = true;
 
@@ -33,6 +34,14 @@ export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
+        <View
+          style={{
+            marginTop: 30,
+            alignItems: 'center',
+          }}
+        >
+          <Image source={PizzaImage} />
+        </View>
         <Header />
         <TextInput
           value={this.state.search}

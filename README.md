@@ -4,6 +4,12 @@
 
 https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
+#### Components that we will learn from React-Native are:
+
+- FlatList, Image, StyleSheet, TextInput, View, ScrollView, TouchableHighlight, TouchableOpacity,
+  ,TouchableHighlight
+  ,TouchableWithoutFeedback
+
 #### Tips on android emulator
 
 - **If app is keep spinning then do what?**
@@ -251,4 +257,9 @@ So run below script to open developermenu
 #### Requirement
 
 - Display image from local folder
-- Display image from server
+- Display image from server which is not in the source code bundle 
+
+#### Learning
+
+- We need `Image` component to render image.
+- 
