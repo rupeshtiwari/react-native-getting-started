@@ -104,66 +104,85 @@ So run below script to open developermenu
 - add debugger in code
 - put break point on the chrome tool to
 
+### Chapter-8-style-differently-for-ios-and-android
 
-### Chapter-8-style-differently-for-ios-and-android 
+### Requirement
 
-### Requirement 
 - Style different for ios and android
 
 ### Learning
+
 - How to use react-native platform to decide ios or android
 - How to use single style for ios and android
 - Creating style files for ios and android and how platform picks the file automatically
 - How to create 2 components and let platform render based on the ios or android device?
-  
 
 `Platform.OS === 'ios' ? { padding: 20, paddingTop: 30 } : {},`
 
-
 ### Chapter-9-Folder-Structure-In-React-Native-App
 
-#### Requirement 
+#### Requirement
+
 - Organize components
 - Organize Styles
-- Do not use absolute paths 
+- Do not use absolute paths
 
 ### Chapter-10-Scroll-Elements-on-React-NativeScreen-ScrollView
-#### Requirement 
+
+#### Requirement
+
 - Add scrolling to the list
-- Dont scroll header and search text. 
+- Dont scroll header and search text.
 - While scrolling till end make sure you dont show the space between first row and the search text.
 
 #### Learning
+
 - `contentContainerStyle` of scrollview
 - Performance is poor when you want to load large list using `scrollView`
 
 ### Chapter-11-Display-List-Using FlatList
-#### Requirement 
+
+#### Requirement
+
 - Render item on demand when u scroll the view.
 - Reduce Flicker while u scroll
+
 #### Learning
+
 - `scrollView` loads entire view in the memory and slows down the app good for 20-30 items
 - each item directly render inline in `scrollview`
 - `flatlist` designed to performance for 100 or 1000 of items.
-- `flatlist` progressively loads the items 
-- `flatList` it recycles the view so it lowers the memory footprints as you scroll. 
-
+- `flatlist` progressively loads the items
+- `flatList` it recycles the view so it lowers the memory footprints as you scroll.
 
 ### Chapter-12 Make Touchable button React Native
+
 #### Requirement
+
 - Create info button
 - Show Restaurant details on info button click
+- Create fully customizable styled button.
 
 #### Learning
-- The React Native Button works fine but it is not fully custamizable. It has not many configuration options. 
+
+- The React Native Button works fine but it is not fully custamizable. It has not many configuration options.
 - Therefore, we should use fullly customizable touchable buttons like
   - TouchableOpacity
   - TouchableHighlight
   - TouchableWithoutFeedback
 - In React you can use label and style it and make your own button
-  However in React-Native not every element is touchable. 
+  However in React-Native not every element is touchable.
 
-- TouchableOpacity  
-  - Restrictions: We can not style the Text within TouchableOpacity 
-  - Therefore, remember to style your text separately. 
+- **TouchableOpacity**
 
+  - Restrictions: We can not style the Text within TouchableOpacity
+  - Therefore, remember to style your text separately.
+  - It changes the opacity as you click to give feeling that it is clicked.
+  - As you tab opacity changes.
+  - From user experience point of view much exciting.
+
+- **TouchableWithoutFeedback**
+  - Styles does not work in this button
+  - When you tap on them no feedback no opacity change nothing
+  - From user experience point of view not that much exciting.
+  - Use it when you want: "No automatic visual feedback"

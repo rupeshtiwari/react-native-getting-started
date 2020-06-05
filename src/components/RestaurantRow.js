@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 
 export default class RestaurantRow extends Component {
   state = {
@@ -27,9 +27,12 @@ export default class RestaurantRow extends Component {
             <Text style={styles.address}>{place.address}</Text>
           </View>
           <View style={styles.edges}>
-            <TouchableOpacity onPress={this.infoPressed} style={styles.button}>
+            <TouchableWithoutFeedback
+              onPress={this.infoPressed}
+              style={styles.button}
+            >
               <Text style={styles.buttonText}>Info</Text>
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
           </View>
         </View>
         {this.state.showInfo && (
