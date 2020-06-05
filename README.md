@@ -6,9 +6,16 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
 #### Components that we will learn from React-Native are:
 
-- FlatList, Image, StyleSheet, TextInput, View, ScrollView, TouchableHighlight, TouchableOpacity,
-  ,TouchableHighlight
-  ,TouchableWithoutFeedback
+- FlatList
+- Image
+- StyleSheet
+- TextInput
+- View
+- ScrollView
+- TouchableHighlight
+- TouchableOpacity,
+- TouchableWithoutFeedback
+- StackNavigator
 
 #### Tips on android emulator
 
@@ -274,3 +281,6 @@ So run below script to open developermenu
 #### Learning
 
 - `expo vector-icons`
+
+### Chapter-16 Show New Screen with React Navigation & StackNavigator
+
