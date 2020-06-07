@@ -36,15 +36,14 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - createBottomTabNavigator
 - Modal Screen
 
-#### Extra Learning while writing app
+#### Extra Learning while doing this course
 
 - Flex Styles for Components
 - Target platform components ( ios and android)
 - Running server
+- Live running app on android mobile
 
 #### What u should not do
-
-## -
 
 #### New stuff from React-V5 to react native
 
@@ -412,13 +411,28 @@ So run below script to open developermenu
 - Therefore , it has to be root element now.
 - Create new stack navigator where you put `tab` and `modal screen`
 - `goBack`
+- Create Submit form with below elements
+  - Name input box
+  - Ratings input
+  - Review multilineinputbox
+  - submit button
 
 ### Chapter-21 Ensure Text Fields donot get covered by the on screen keyboard
 
 #### Requirement
+
 - Add Review popup should show
   - review text box
   - name text box
-- While typing make sure you dont hide the review text box
+- While typing make sure onscreen keyboard dont hide the review text box
+
 #### Learning
+
 - Multiline input
+- `yarn add react-native-keyboard-aware-scroll-view`
+
+
+#### Requirement
+- Submit the review to server
+- Show spinner while the user is waiting for response to come from server
+- Avoid submitting the form multiple times

@@ -1,4 +1,4 @@
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default class AddReview extends Component {
   state = {
@@ -17,45 +18,48 @@ export default class AddReview extends Component {
   render() {
     const { goBack } = this.props.navigation;
     return (
-      <View style={styles.root}>
-        <TouchableOpacity style={styles.button} onPress={goBack}>
-          <FontAwesome name='close' size={24} color='#0066CC' />
-        </TouchableOpacity>
-        <Text style={styles.addReview}>Add Review</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(name) => this.setState({ name })}
-        />
-        <Text style={styles.rating}>Your Rating:</Text>
-        <View style={styles.stars}>
-          {[1, 2, 3, 4, 5].map((i) => {
-            return (
-              <TouchableOpacity
-                onPress={() => this.setState({ rating: i })}
-                style={styles.starButton}
-                key={i}
-              >
-                <FontAwesome5
-                  name='star'
-                  size={40}
-                  color={this.state.rating >= i ? '#FFD64C' : '#CCCCCC'}
-                />
-              </TouchableOpacity>
-            );
-          })}
+      <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: '#FFF' }}>
+        <View style={styles.root}>
+          <TouchableOpacity style={styles.button} onPress={goBack}>
+            <FontAwesome name='close' size={24} color='#0066CC' />
+          </TouchableOpacity>
+          <Text style={styles.addReview}>Add Review</Text>
+          <TextInput
+            placeholder='Your Name'
+            style={styles.input}
+            onChangeText={(name) => this.setState({ name })}
+          />
+          <Text style={styles.rating}>Your Rating:</Text>
+          <View style={styles.stars}>
+            {[1, 2, 3, 4, 5].map((i) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => this.setState({ rating: i })}
+                  style={styles.starButton}
+                  key={i}
+                >
+                  <FontAwesome
+                    name={'star'}
+                    size={40}
+                    color={this.state.rating >= i ? '#FFD64C' : '#CCCCCC'}
+                  />
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          <TextInput
+            style={[styles.input, { height: 100 }]}
+            placeholder='Review'
+            value={this.state.review}
+            onChangeText={(review) => this.setState({ review })}
+            multiline={true}
+            numberOfLines={5}
+          />
+          <TouchableOpacity style={styles.submitButton}>
+            <Text style={styles.submitButtonText}> Submit Review</Text>
+          </TouchableOpacity>
         </View>
-        <TextInput
-          style={[styles.input, { height: 100 }]}
-          placeholder='Review'
-          value={this.state.review}
-          onChangeText={(review) => this.setState({ review })}
-          multiline={true}
-          numberOfLines={5}
-        />
-        <TouchableOpacity style={styles.submitButton}>
-          <Text style={styles.submitButtonText}> Submit Review</Text>
-        </TouchableOpacity>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 }
