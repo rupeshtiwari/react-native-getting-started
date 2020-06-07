@@ -19,20 +19,23 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
   - yarn android
 
 #### Components that we will learn from React-Native are:
-- View = <div />
-- Text = <p />
-- StyleSheet
-- ScrollView
-- FlatList
-- Image
-- TextInput = <input>
-  - Multiline input
-- TouchableHighlight
-- TouchableOpacity,
-- TouchableWithoutFeedback
-- ActivityIndicator
 
-- 3rd Parties: 
+- **AsyncStorage**
+  - View = <div />
+  - Text = <p />
+  - StyleSheet
+  - ScrollView
+  - FlatList
+  - Image
+  - TextInput = <input>
+    - Multiline input
+  - TouchableHighlight
+  - TouchableOpacity,
+  - TouchableWithoutFeedback
+  - ActivityIndicator
+  - AsyncStorage
+
+- **3rd Parties:**
   - createStackNavigator
   - createBottomTabNavigator
   - Modal Screen
@@ -435,10 +438,21 @@ So run below script to open developermenu
 - Multiline input
 - `yarn add react-native-keyboard-aware-scroll-view`
 
-
 ### Chapter-22 Show Spinner while Submitting a Form in React Native with ActivityIndicator
 
 #### Requirement
+
 - Submit the review to server
 - Show spinner while the user is waiting for response to come from server
 - Avoid submitting the form multiple times
+
+### Chapter-23 Save And Retrieve Data on the Device in a React Native App with AsyncStorage
+
+#### Requirement
+- Save user name in storage for add review popup
+  
+#### Learning
+- AsyncStorage
+  - AsyncStorage keys are globally shared for your app
+  - values are always string not object.
+  

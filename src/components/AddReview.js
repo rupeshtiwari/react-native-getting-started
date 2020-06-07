@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 import React, { Component } from 'react';
 import {
   ActivityIndicator,
+  AsyncStorage,
   StyleSheet,
   Text,
   TextInput,
@@ -26,9 +27,19 @@ export default class AddReview extends Component {
       : 'http://10.0.2.2:3000/review';
   }
 
+  componentDidMount() {
+    AsyncStorage.getItem('reviewer_name').then((name) =>
+      this.setState({ name })
+    );
+  }
+
   submitReview = () => {
     console.log('submitting form');
     this.setState({ submitting: true });
+    if (this.state.name != null) {
+      AsyncStorage.setItem('reviewer_name', this.state.name);
+    }
+
     axios
       .post(this.submitUrl, {
         method: 'POST',
@@ -62,6 +73,7 @@ export default class AddReview extends Component {
           <TextInput
             placeholder='Your Name'
             style={styles.input}
+            value={this.state.name || ''}
             onChangeText={(name) => this.setState({ name })}
           />
           <Text style={styles.rating}>Your Rating:</Text>
@@ -140,10 +152,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'grey',
     textAlign: 'center',
-    marginVertical: 40,
+    marginVertical: 10,
   },
   stars: {
-    marginBottom: 80,
+    marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'center',
   },
