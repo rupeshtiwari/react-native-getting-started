@@ -480,3 +480,9 @@ Pending...
 - https://docs.expo.io/versions/latest/sdk/splash-screen/
 - `expo add expo-splash-screen`
 - https://docs.expo.io/guides/splash-screens/?redirected
+
+
+### Chapter-26 App icon for ios
+pending
+
+### Chapter-27 App icon for android
