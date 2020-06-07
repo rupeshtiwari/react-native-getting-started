@@ -370,6 +370,7 @@ So run below script to open developermenu
 ### Chapter-19 Add Bottom Tabs to a react native app with react navigation
 
 #### Requirement
+- Use React Navigation 5 API
 - We want the tab to be alwasy bottom of screen
 - Create bottom tabs `list` and `about`
 - Each tab should have:
