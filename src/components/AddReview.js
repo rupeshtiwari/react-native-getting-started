@@ -1,6 +1,9 @@
 import { FontAwesome } from '@expo/vector-icons';
+import axios from 'axios';
+import Constants from 'expo-constants';
 import React, { Component } from 'react';
 import {
+  ActivityIndicator,
   StyleSheet,
   Text,
   TextInput,
@@ -13,8 +16,39 @@ export default class AddReview extends Component {
   state = {
     name: null,
     rating: null,
-    review: null,
+    comment: null,
+    submitting: false,
   };
+
+  get submitUrl() {
+    return Constants.isDevice
+      ? 'http://rupesh-home-pc:3000/review'
+      : 'http://10.0.2.2:3000/review';
+  }
+
+  submitReview = () => {
+    this.setState({ submitting: true });
+    axios
+      .post(this.submitUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          name: this.state.name,
+          rating: this.state.rating,
+          comment: this.state.comment,
+        }),
+      })
+      .then((result) => {
+        this.setState({ submitting: false }, () => {
+          console.log(result.data);
+          this.props.navigation.goBack();
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ submitting: false });
+      });
+  };
+
   render() {
     const { goBack } = this.props.navigation;
     return (
@@ -51,11 +85,23 @@ export default class AddReview extends Component {
             style={[styles.input, { height: 100 }]}
             placeholder='Review'
             value={this.state.review}
-            onChangeText={(review) => this.setState({ review })}
+            onChangeText={(comment) => this.setState({ comment })}
             multiline={true}
             numberOfLines={5}
           />
-          <TouchableOpacity style={styles.submitButton}>
+
+          {this.state.submitting && (
+            <ActivityIndicator
+              size='large'
+              color='#0066CC'
+              style={{ padding: 5 }}
+            />
+          )}
+
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={this.submitReview}
+          >
             <Text style={styles.submitButtonText}> Submit Review</Text>
           </TouchableOpacity>
         </View>
