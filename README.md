@@ -37,7 +37,8 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - **If app is keep spinning then do what?**
   - check for errors in chrome dev tool
   - Revert your recent changes and go back to the change when your app was working. Restart app and then do one by one change and try to find out which line of code is breaking your app.
-  - or stop process and again run android from terminal
+  - or stop process and again run android from terminal.
+  - or kill all the app instances in android simulator phone then rerun `yarn android`.
 - **When you install new package**
 
   - Before installing any npm package
@@ -300,7 +301,7 @@ So run below script to open developermenu
 ### Chapter-16 Show New Screen with React Navigation & StackNavigator
 
 #### Requirement
-
+**Navigation **
 - home page show list
 - route to info page
 - come back to home page
@@ -311,3 +312,4 @@ So run below script to open developermenu
 - https://reactnavigation.org/docs/stack-navigator/
 - In order to make stack working run below scripts
 - Run `yarn add @react-native-community/masked-view @react-navigation/bottom-tabs @react-navigation/native  react-native-safe-area-context react-native-screens @react-navigation/drawer react-native-reanimated @react-navigation/material-bottom-tabs react-native-paper @react-navigation/material-top-tabs react-native-tab-view @react-navigation/stack`
+- RestaurantList component will get `{navigation}` as props that has `navigate` method

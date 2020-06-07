@@ -9,13 +9,13 @@ import {
   View,
 } from 'react-native';
 
-
 export default class RestaurantRow extends Component {
   state = {
     showInfo: false,
   };
 
-  infoPressed = () => this.setState({ showInfo: !this.state.showInfo });
+  // infoPressed = () => this.setState({ showInfo: !this.state.showInfo });
+  infoPressed = () => this.props.navigation.navigate('Info');
 
   getImageUri(imageName) {
     return Constants.isDevice
