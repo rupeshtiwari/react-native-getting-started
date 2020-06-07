@@ -39,7 +39,7 @@ function MyStack() {
 function MyTabs() {
   return (
     <Tab.Navigator
-      tabBarOptions={{ showIcon: true }}
+      tabBarOptions={{ showIcon: true , activeBackgroundColor:'#E6F0FA'}}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused, size }) => {
           const iconName = {
