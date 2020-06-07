@@ -1,15 +1,7 @@
-import getUrl from './BaseUrl';
 import React, { Component } from 'react';
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import Stars from './Stars';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import getUrl from './BaseUrl';
+import Stars from './Stars';
 
 export default class RestaurantInfo extends Component {
   getImageUri(imageName) {

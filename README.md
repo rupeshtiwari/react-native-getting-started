@@ -21,6 +21,7 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 #### Components that we will learn from React-Native are:
 
 - **AsyncStorage**
+
   - View = <div />
   - Text = <p />
   - StyleSheet
@@ -449,15 +450,32 @@ So run below script to open developermenu
 ### Chapter-23 Save And Retrieve Data on the Device in a React Native App with AsyncStorage
 
 #### Requirement
+
 - Save user name in storage for add review popup
-  
+
 #### Learning
+
 - AsyncStorage
+
   - AsyncStorage keys are globally shared for your app
   - values are always string not object.
   - get & set from async storage
-  
+
 ### Chapter-24 Change the splash screen for iOS Apps built with React Native
 
+Pending...
+
 #### Requirement
-- BaseURl that works in ios and android and simulator 
+
+- BaseURl that works in ios and android and simulator
+
+### Chapter-25 Change the Splash Screen fo rAndroid Apps built with React Native
+
+#### Requirement
+
+- Show the splash screen while opening app.
+
+#### Learning
+
+- https://docs.expo.io/versions/latest/sdk/splash-screen/
+- `expo add expo-splash-screen`

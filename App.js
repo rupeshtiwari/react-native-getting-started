@@ -6,6 +6,7 @@ import About from 'components/About';
 import AddReview from 'components/AddReview';
 import RestaurantInfo from 'components/RestaurantInfo';
 import RestaurantList from 'components/RestaurantList';
+import * as SplashScreen from 'expo-splash-screen';
 import React from 'react';
 
 const Stack = createStackNavigator();
@@ -76,11 +77,48 @@ function RestaurantTabs() {
     </Tab.Navigator>
   );
 }
+export default class App extends React.Component {
+  state = {
+    appIsReady: false,
+  };
+  async componentDidMount() {
+    // Prevent native splash screen from autohiding
+    try {
+      await SplashScreen.preventAutoHideAsync();
+    } catch (e) {
+      console.warn(e);
+    }
+    this.prepareResources();
+  }
+  /**
+   * Method that serves to load resources and make API calls
+   */
+  prepareResources = async () => {
+    await performAPICalls();
+    await downloadAssets();
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MainStack />
-    </NavigationContainer>
-  );
+    this.setState({ appIsReady: true }, async () => {
+      console.log('hiding splash');
+      await SplashScreen.hideAsync();
+    });
+  };
+
+  async performAPICalls() {
+    return new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+  async downloadAssets() {
+    return new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+
+  render() {
+    if (!this.state.appIsReady) {
+      return null;
+    }
+
+    return (
+      <NavigationContainer>
+        <MainStack />
+      </NavigationContainer>
+    );
+  }
 }
