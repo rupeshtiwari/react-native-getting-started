@@ -14,7 +14,20 @@ function MyStack() {
         name='Home'
         component={RestaurantList}
       />
-      <Stack.Screen name='Info' component={RestaurantInfo} />
+      <Stack.Screen
+        options={{
+          title: 'Restaurant Info',
+          headerStyle: {
+            backgroundColor: '#0066CC',
+          },
+          headerTintColor: '#FFF',
+          headerTitleStyle: {
+            color: '#FFF',
+          },
+        }}
+        name='Info'
+        component={RestaurantInfo}
+      />
     </Stack.Navigator>
   );
 }

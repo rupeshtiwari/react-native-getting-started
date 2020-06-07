@@ -1,23 +1,22 @@
 ## React Native Getting Started
 
-
-
-
 ### Environment Setup
 
 https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
 #### Running app
+
 - npm i ( Insalling root packages)
 - cd server and run npm i (installing server npm packages)
 - npm run server (running server)
 - npm run android (running client)
 
 #### Benefit of Yarn
+
 - Very fast than npm
-- No need to say npm run scrip-name 
-  - npm run android 
-  - yarn android 
+- No need to say npm run scrip-name
+  - npm run android
+  - yarn android
 
 #### Components that we will learn from React-Native are:
 
@@ -301,7 +300,9 @@ So run below script to open developermenu
 ### Chapter-16 Show New Screen with React Navigation & StackNavigator
 
 #### Requirement
+
 **Navigation **
+
 - home page show list
 - route to info page
 - come back to home page
@@ -309,7 +310,16 @@ So run below script to open developermenu
 -
 
 #### Learning
+
 - https://reactnavigation.org/docs/stack-navigator/
 - In order to make stack working run below scripts
-- Run `yarn add @react-native-community/masked-view @react-navigation/bottom-tabs @react-navigation/native  react-native-safe-area-context react-native-screens @react-navigation/drawer react-native-reanimated @react-navigation/material-bottom-tabs react-native-paper @react-navigation/material-top-tabs react-native-tab-view @react-navigation/stack`
+- Run `yarn add @react-native-community/masked-view @react-navigation/bottom-tabs @react-navigation/native react-native-safe-area-context react-native-screens @react-navigation/drawer react-native-reanimated @react-navigation/material-bottom-tabs react-native-paper @react-navigation/material-top-tabs react-native-tab-view @react-navigation/stack`
 - RestaurantList component will get `{navigation}` as props that has `navigate` method
+
+### Chapter-17 customize stack navigator header
+
+#### Requirement
+
+- Change the header color to blue
+- Change header title
+- hide default header title

@@ -32,8 +32,9 @@ export default class RestaurantList extends Component {
   }
 
   render() {
+   
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
         <View
           style={{
             marginTop: 30,
