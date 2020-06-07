@@ -30,44 +30,56 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - TouchableOpacity,
 - TouchableWithoutFeedback
 - StackNavigator
+- Bottom Tabs
 
+- Flex Styles for Components
+- Target platform components ( ios and android)
+- Running server
+#### What u should not do 
+- 
+- 
 #### New stuff from React-V5 to react native
-- Stack Navigator 
+- Stack Navigator
   - passing data
   - fetching data
   - stack navigation configuration
   - Overriding navigation options from components.
   - How to know which device we are running like emulator or real phone
-  - 
+  -
+#### Tips for react-native development
+- Use Expo 
+- Always refer to Expo Snacks for live latest examples while writing code.
 
 #### Tips on android emulator
-- Bugs in android emulators 
-  - Relod is not working it keeps spinning for ever. 
+
+- Bugs in android emulators
+  - Relod is not working it keeps spinning for ever.
   - Everytime u reload then u need to kill app and restart.
 - **If app is keep spinning then do what?**
+
   - check for errors in chrome dev tool
   - Revert your recent changes and go back to the change when your app was working. Restart app and then do one by one change and try to find out which line of code is breaking your app.
   - or stop process and again run android from terminal.
-  - kill the aapp instances from android simulator, go to expo chrome page and click on run on `Run on Android device/emulator` 
+  - kill the aapp instances from android simulator, go to expo chrome page and click on run on `Run on Android device/emulator`
   - or kill all the app instances in android simulator phone, kill all the vs code terminal running android script and then rerun `yarn android`.
-  
-#### When you install new package**
 
-  - Before installing any npm package
-    - stop server by killing any running process in vs code terminal
-    - stop android by killing any running process in vs code terminal
-  - then run `npm start` again
+#### When you install new package\*\*
+
+- Before installing any npm package
+  - stop server by killing any running process in vs code terminal
+  - stop android by killing any running process in vs code terminal
+- then run `npm start` again
 
 #### Why Expo?
 
-  - React Native will not give you official libraries for other features.
-  - Expo has large set of inbuild official libraries tested works great compare to other 3rd party libraries.
-  - No linking requirement ( React Native is working on this also)
-    When you install any native npm package you have to manually link your react-native
-    to that npm package by running linking command. That some times doesnot work. However, Expo does it out of the box if you use `expo install` command to install one of the expo packages.
-  - Example in order to know if you are in simulator or not you have ton install 3rd party which sometimes not working installation is also not that easy. However with expo it is very fast installation and it worked too!
+- React Native will not give you official libraries for other features.
+- Expo has large set of inbuild official libraries tested works great compare to other 3rd party libraries.
+- No linking requirement ( React Native is working on this also)
+  When you install any native npm package you have to manually link your react-native
+  to that npm package by running linking command. That some times doesnot work. However, Expo does it out of the box if you use `expo install` command to install one of the expo packages.
+- Example in order to know if you are in simulator or not you have ton install 3rd party which sometimes not working installation is also not that easy. However with expo it is very fast installation and it worked too!
 
-  - I prefer to use expo that is why
+- I prefer to use expo that is why
 
 ### Chapter-2 Display formated text
 
@@ -342,7 +354,7 @@ So run below script to open developermenu
 #### Requirement
 
 - From Restaurant List pass the place to Restaurant info using navigation object.
-- Show the restaurant info page completely. 
+- Show the restaurant info page completely.
 
 #### Learning
 
@@ -351,3 +363,18 @@ So run below script to open developermenu
 - `props.route.params` method
 - In order to override the title from component use
   `this.props.navigation.setOptions({title:"Rupesh"});`
+
+### Chapter-19 Add Bottom Tabs to a react native app with react navigation
+
+#### Requirement
+- We want the tab to be alwasy bottom of screen
+- Create bottom tabs `list` and `about`
+- Each tab should have:
+  - `icon` and icon should
+  - change colors of icon when it is `active`
+  - change the background color of tab icon when `active`
+  
+
+#### Learning
+- `yarn add @react-navigation/bottom-tabs`
+- How to set initial selected tab index for bottom tabs?

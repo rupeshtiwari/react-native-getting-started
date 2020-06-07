@@ -1,10 +1,13 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import About from 'components/About';
 import RestaurantInfo from 'components/RestaurantInfo';
 import RestaurantList from 'components/RestaurantList';
 import React from 'react';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function MyStack() {
   return (
@@ -32,10 +35,19 @@ function MyStack() {
   );
 }
 
+function MyTabs() {
+  return (
+    <Tab.Navigator currentTabIndex='1'>
+      <Tab.Screen name='List' component={MyStack} />
+      <Tab.Screen name='About' component={About} />
+    </Tab.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack />
+      <MyTabs />
     </NavigationContainer>
   );
 }
