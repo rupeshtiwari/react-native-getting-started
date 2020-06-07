@@ -3,6 +3,7 @@ import Header from 'components/Header';
 import RestaurantRow from 'components/RestaurantRow';
 import Constants from 'expo-constants';
 import PizzaImage from 'images/pizza.png';
+import getUrl from './BaseUrl';
 import React, { Component } from 'react';
 import { FlatList, Image, StyleSheet, TextInput, View } from 'react-native';
 
@@ -23,16 +24,11 @@ export default class RestaurantList extends Component {
 
   componentDidMount() {
     axios
-      .get(
-        this.isSimulator()
-          ? 'http://10.0.2.2:3000/restaurants'
-          : 'http://rupesh-home-pc:3000/restaurants'
-      )
+      .get(getUrl('restaurants'))
       .then((result) => this.setState({ restaurants: result.data }));
   }
 
   render() {
-   
     return (
       <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
         <View
