@@ -39,6 +39,7 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - 
 - 
 #### New stuff from React-V5 to react native
+https://reactnavigation.org/
 - Stack Navigator
   - passing data
   - fetching data
@@ -49,6 +50,8 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 #### Tips for react-native development
 - Use Expo 
 - Always refer to Expo Snacks for live latest examples while writing code.
+- React-Navigation 5 APIs are very different. 
+- https://reactnavigation.org/
 
 #### Tips on android emulator
 
@@ -378,3 +381,4 @@ So run below script to open developermenu
 #### Learning
 - `yarn add @react-navigation/bottom-tabs`
 - How to set initial selected tab index for bottom tabs?
+  https://reactnavigation.org/docs/tab-based-navigation/

@@ -1,3 +1,4 @@
+import { FontAwesome5 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -37,7 +38,18 @@ function MyStack() {
 
 function MyTabs() {
   return (
-    <Tab.Navigator currentTabIndex='1'>
+    <Tab.Navigator
+      tabBarOptions={{ showIcon: true }}
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, focused, size }) => {
+          const iconName = {
+            List: 'list',
+            About: 'info-circle',
+          }[route.name];
+          return <FontAwesome5 color={color} size={size} name={iconName} />;
+        },
+      })}
+    >
       <Tab.Screen name='List' component={MyStack} />
       <Tab.Screen name='About' component={About} />
     </Tab.Navigator>
