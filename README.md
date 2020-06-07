@@ -19,13 +19,13 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
   - yarn android
 
 #### Components that we will learn from React-Native are:
-
+- View = <div />
+- Text = <p />
+- StyleSheet
+- ScrollView
 - FlatList
 - Image
-- StyleSheet
 - TextInput
-- View
-- ScrollView
 - TouchableHighlight
 - TouchableOpacity,
 - TouchableWithoutFeedback
@@ -407,3 +407,4 @@ So run below script to open developermenu
 - Modal has to be on top of stack and tab
 - Therefore , it has to be root element now.
 - Create new stack navigator where you put `tab` and `modal screen`
+- `goBack`

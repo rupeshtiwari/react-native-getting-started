@@ -20,7 +20,11 @@ function MainStack() {
         component={RestaurantTabs}
         options={{ headerShown: false, mode: 'modal' }}
       />
-      <Stack.Screen name='AddReview' component={AddReview} />
+      <Stack.Screen
+        name='AddReview'
+        component={AddReview}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
