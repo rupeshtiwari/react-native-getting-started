@@ -27,6 +27,7 @@ export default class AddReview extends Component {
   }
 
   submitReview = () => {
+    console.log('submitting form');
     this.setState({ submitting: true });
     axios
       .post(this.submitUrl, {
@@ -101,6 +102,7 @@ export default class AddReview extends Component {
           <TouchableOpacity
             style={styles.submitButton}
             onPress={this.submitReview}
+            disabled={this.state.submitting}
           >
             <Text style={styles.submitButtonText}> Submit Review</Text>
           </TouchableOpacity>

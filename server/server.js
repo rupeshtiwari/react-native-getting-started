@@ -152,6 +152,7 @@ app
   })
   .post('/review', (req, res) => {
     setTimeout(() => {
+      console.log('Received review', req.body);
       res.json({ success: 'OK' });
     }, 2000);
   })
