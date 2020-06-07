@@ -479,3 +479,4 @@ Pending...
 
 - https://docs.expo.io/versions/latest/sdk/splash-screen/
 - `expo add expo-splash-screen`
+- https://docs.expo.io/guides/splash-screens/?redirected

@@ -9,7 +9,6 @@ function isiOS() {
 }
 
 export default function getUrl(url) {
-    debugger;
   if (isiOS()) {
     return `http://localhost:3000/${url}`;
   } else {
@@ -21,7 +20,7 @@ export default function getUrl(url) {
 
 /**
  * erp tool
- * manager 
+ * manager
  * JDM tool is dying
  * trying to switch and start coding
  */

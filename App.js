@@ -94,8 +94,8 @@ export default class App extends React.Component {
    * Method that serves to load resources and make API calls
    */
   prepareResources = async () => {
-    await performAPICalls();
-    await downloadAssets();
+    await this.performAPICalls();
+    await this.downloadAssets();
 
     this.setState({ appIsReady: true }, async () => {
       console.log('hiding splash');
