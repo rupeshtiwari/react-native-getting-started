@@ -457,3 +457,4 @@ So run below script to open developermenu
   - values are always string not object.
   - get & set from async storage
   
+### Chapter-24 Change the splash screen for iOS Apps built with React Native
