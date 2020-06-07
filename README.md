@@ -455,4 +455,5 @@ So run below script to open developermenu
 - AsyncStorage
   - AsyncStorage keys are globally shared for your app
   - values are always string not object.
+  - get & set from async storage
   

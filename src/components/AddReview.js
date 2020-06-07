@@ -71,7 +71,7 @@ export default class AddReview extends Component {
           </TouchableOpacity>
           <Text style={styles.addReview}>Add Review</Text>
           <TextInput
-            placeholder='Your Name'
+            placeholder='Your Name (optional)'
             style={styles.input}
             value={this.state.name || ''}
             onChangeText={(name) => this.setState({ name })}
