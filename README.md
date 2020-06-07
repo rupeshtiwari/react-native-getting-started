@@ -1,6 +1,6 @@
 ## React Native Getting Started
 
-### Environment Setup
+### Chapter-1 Environment Setup
 
 https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
@@ -31,21 +31,34 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - TouchableWithoutFeedback
 - StackNavigator
 
-#### Tips on android emulator
+#### New stuff from React-V5 to react native
+- Stack Navigator 
+  - passing data
+  - fetching data
+  - stack navigation configuration
+  - Overriding navigation options from components.
+  - How to know which device we are running like emulator or real phone
+  - 
 
+#### Tips on android emulator
+- Bugs in android emulators 
+  - Relod is not working it keeps spinning for ever. 
+  - Everytime u reload then u need to kill app and restart.
 - **If app is keep spinning then do what?**
   - check for errors in chrome dev tool
   - Revert your recent changes and go back to the change when your app was working. Restart app and then do one by one change and try to find out which line of code is breaking your app.
   - or stop process and again run android from terminal.
-  - or kill all the app instances in android simulator phone then rerun `yarn android`.
-- **When you install new package**
+  - kill the aapp instances from android simulator, go to expo chrome page and click on run on `Run on Android device/emulator` 
+  - or kill all the app instances in android simulator phone, kill all the vs code terminal running android script and then rerun `yarn android`.
+  
+#### When you install new package**
 
   - Before installing any npm package
     - stop server by killing any running process in vs code terminal
     - stop android by killing any running process in vs code terminal
   - then run `npm start` again
 
-- **Why Expo?**
+#### Why Expo?
 
   - React Native will not give you official libraries for other features.
   - Expo has large set of inbuild official libraries tested works great compare to other 3rd party libraries.
@@ -323,3 +336,18 @@ So run below script to open developermenu
 - Change the header color to blue
 - Change header title
 - hide default header title
+
+### Chapter-18 Pass Data Between Screens When Navigation With Stack Navigator
+
+#### Requirement
+
+- From Restaurant List pass the place to Restaurant info using navigation object.
+- Show the restaurant info page completely. 
+
+#### Learning
+
+- How to pass data from parent screen (from screen )
+- How to receive data in child screen ( to screen )
+- `props.route.params` method
+- In order to override the title from component use
+  `this.props.navigation.setOptions({title:"Rupesh"});`

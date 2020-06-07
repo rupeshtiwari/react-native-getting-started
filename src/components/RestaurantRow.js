@@ -1,27 +1,10 @@
 import Stars from 'components/Stars';
-import Constants from 'expo-constants';
 import React, { Component } from 'react';
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 export default class RestaurantRow extends Component {
-  state = {
-    showInfo: false,
-  };
-
-  // infoPressed = () => this.setState({ showInfo: !this.state.showInfo });
-  infoPressed = () => this.props.navigation.navigate('Info');
-
-  getImageUri(imageName) {
-    return Constants.isDevice
-      ? `http://rupesh-home-pc:3000/images/${imageName}`
-      : `http://10.0.2.2:3000/images/${imageName}`;
-  }
+  infoPressed = () =>
+    this.props.navigation.navigate('Info', { place: this.props.place });
 
   render() {
     const { place, index } = this.props;
@@ -48,21 +31,6 @@ export default class RestaurantRow extends Component {
             </TouchableHighlight>
           </View>
         </View>
-        {this.state.showInfo && (
-          <View style={styles.info}>
-            <Text>Restaurant Info</Text>
-            <Image
-              source={{
-                uri: this.getImageUri(place.image),
-              }}
-              style={{
-                flex: 1,
-                height: 100,
-                resizeMode: 'contain',
-              }}
-            ></Image>
-          </View>
-        )}
       </View>
     );
   }

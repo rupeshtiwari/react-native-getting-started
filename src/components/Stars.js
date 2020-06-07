@@ -17,9 +17,7 @@ export default function Stars({ rating = 3.5 }) {
 const styles = StyleSheet.create({
   stars: {
     flex: 1,
-    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
     padding: 5,
     minWidth: 50,
   },
