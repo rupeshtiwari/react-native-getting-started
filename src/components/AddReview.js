@@ -45,13 +45,16 @@ export default class AddReview extends Component {
           })}
         </View>
         <TextInput
-          style={(styles.input, { height: 100 })}
+          style={[styles.input, { height: 100 }]}
           placeholder='Review'
           value={this.state.review}
           onChangeText={(review) => this.setState({ review })}
           multiline={true}
           numberOfLines={5}
         />
+        <TouchableOpacity style={styles.submitButton}>
+          <Text style={styles.submitButtonText}> Submit Review</Text>
+        </TouchableOpacity>
       </View>
     );
   }
