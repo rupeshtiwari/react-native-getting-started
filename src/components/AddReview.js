@@ -1,8 +1,19 @@
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 export default class AddReview extends Component {
+  state = {
+    name: null,
+    rating: null,
+    review: null,
+  };
   render() {
     const { goBack } = this.props.navigation;
     return (
@@ -11,6 +22,36 @@ export default class AddReview extends Component {
           <FontAwesome name='close' size={24} color='#0066CC' />
         </TouchableOpacity>
         <Text style={styles.addReview}>Add Review</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(name) => this.setState({ name })}
+        />
+        <Text style={styles.rating}>Your Rating:</Text>
+        <View style={styles.stars}>
+          {[1, 2, 3, 4, 5].map((i) => {
+            return (
+              <TouchableOpacity
+                onPress={() => this.setState({ rating: i })}
+                style={styles.starButton}
+                key={i}
+              >
+                <FontAwesome5
+                  name='star'
+                  size={40}
+                  color={this.state.rating >= i ? '#FFD64C' : '#CCCCCC'}
+                />
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+        <TextInput
+          style={(styles.input, { height: 100 })}
+          placeholder='Review'
+          value={this.state.review}
+          onChangeText={(review) => this.setState({ review })}
+          multiline={true}
+          numberOfLines={5}
+        />
       </View>
     );
   }

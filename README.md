@@ -19,13 +19,16 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
   - yarn android
 
 #### Components that we will learn from React-Native are:
+
 - View = <div />
 - Text = <p />
 - StyleSheet
 - ScrollView
 - FlatList
 - Image
-- TextInput
+- TextInput = <input>
+  - Multiline input
+  - Hide input while keyboard is shown
 - TouchableHighlight
 - TouchableOpacity,
 - TouchableWithoutFeedback
@@ -41,8 +44,7 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 
 #### What u should not do
 
--
--
+## -
 
 #### New stuff from React-V5 to react native
 
@@ -399,12 +401,24 @@ So run below script to open developermenu
 ### Chapter-20 Add a Modal Screen that popup from the bottom with React Navigation
 
 #### Requirement
+
 - From Restaurant Info show `add review` button
 - on click `add review` show the modal popup
 - Show the close button onmodal popup
 
 #### Requirement
+
 - Modal has to be on top of stack and tab
 - Therefore , it has to be root element now.
 - Create new stack navigator where you put `tab` and `modal screen`
 - `goBack`
+
+### Chapter-21 Ensure Text Fields donot get covered by the on screen keyboard
+
+#### Requirement
+- Add Review popup should show
+  - review text box
+  - name text box
+- While typing make sure you dont hide the review text box
+#### Learning
+- Multiline input
