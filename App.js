@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import About from 'components/About';
+import AddReview from 'components/AddReview';
 import RestaurantInfo from 'components/RestaurantInfo';
 import RestaurantList from 'components/RestaurantList';
 import React from 'react';
@@ -10,7 +11,22 @@ import React from 'react';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyStack() {
+// function component
+function MainStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='RestaurantTabs'
+        component={RestaurantTabs}
+        options={{ headerShown: false, mode: 'modal' }}
+      />
+      <Stack.Screen name='AddReview' component={AddReview} />
+    </Stack.Navigator>
+  );
+}
+
+// function component
+function RestaurantListStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -36,12 +52,13 @@ function MyStack() {
   );
 }
 
-function MyTabs() {
+// function component
+function RestaurantTabs() {
   return (
     <Tab.Navigator
-      tabBarOptions={{ showIcon: true , activeBackgroundColor:'#E6F0FA'}}
+      tabBarOptions={{ showIcon: true, activeBackgroundColor: '#E6F0FA' }}
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, focused, size }) => {
+        tabBarIcon: ({ color, size }) => {
           const iconName = {
             List: 'list',
             About: 'info-circle',
@@ -50,7 +67,7 @@ function MyTabs() {
         },
       })}
     >
-      <Tab.Screen name='List' component={MyStack} />
+      <Tab.Screen name='List' component={RestaurantListStack} />
       <Tab.Screen name='About' component={About} />
     </Tab.Navigator>
   );
@@ -59,7 +76,7 @@ function MyTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MainStack />
     </NavigationContainer>
   );
 }

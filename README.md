@@ -29,17 +29,25 @@ https://gist.github.com/rupeshtiwari/0ceac298d709941310cfb91ce36c1a6b
 - TouchableHighlight
 - TouchableOpacity,
 - TouchableWithoutFeedback
-- StackNavigator
-- Bottom Tabs
+- createStackNavigator
+- createBottomTabNavigator
+- Modal Screen
+
+#### Extra Learning while writing app
 
 - Flex Styles for Components
 - Target platform components ( ios and android)
 - Running server
-#### What u should not do 
-- 
-- 
+
+#### What u should not do
+
+-
+-
+
 #### New stuff from React-V5 to react native
+
 https://reactnavigation.org/
+
 - Stack Navigator
   - passing data
   - fetching data
@@ -47,10 +55,12 @@ https://reactnavigation.org/
   - Overriding navigation options from components.
   - How to know which device we are running like emulator or real phone
   -
+
 #### Tips for react-native development
-- Use Expo 
+
+- Use Expo
 - Always refer to Expo Snacks for live latest examples while writing code.
-- React-Navigation 5 APIs are very different. 
+- React-Navigation 5 APIs are very different.
 - https://reactnavigation.org/
 
 #### Tips on android emulator
@@ -370,16 +380,30 @@ So run below script to open developermenu
 ### Chapter-19 Add Bottom Tabs to a react native app with react navigation
 
 #### Requirement
+
 - Use React Navigation 5 API
 - We want the tab to be alwasy bottom of screen
 - Create bottom tabs `list` and `about`
 - Each tab should have:
+
   - `icon` and icon should
   - change colors of icon when it is `active`
   - change the background color of tab icon when `active`
-  
 
 #### Learning
+
 - `yarn add @react-navigation/bottom-tabs`
 - How to set initial selected tab index for bottom tabs?
   https://reactnavigation.org/docs/tab-based-navigation/
+
+### Chapter-20 Add a Modal Screen that popup from the bottom with React Navigation
+
+#### Requirement
+- From Restaurant Info show `add review` button
+- on click `add review` show the modal popup
+- Show the close button onmodal popup
+
+#### Requirement
+- Modal has to be on top of stack and tab
+- Therefore , it has to be root element now.
+- Create new stack navigator where you put `tab` and `modal screen`

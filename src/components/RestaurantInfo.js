@@ -1,6 +1,13 @@
 import Constants from 'expo-constants';
 import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Stars from './Stars';
 
 export default class RestaurantInfo extends Component {
@@ -9,6 +16,10 @@ export default class RestaurantInfo extends Component {
       ? `http://rupesh-home-pc:3000/images/${imageName}`
       : `http://10.0.2.2:3000/images/${imageName}`;
   }
+
+  addReview = () => {
+    this.props.navigation.navigate('AddReview');
+  };
 
   render() {
     const place = this.props.route.params.place;
@@ -26,6 +37,9 @@ export default class RestaurantInfo extends Component {
             <Text style={styles.name}>{place.name}</Text>
             <Text style={styles.address}>{place.address}</Text>
             <Stars rating={place.rating} />
+            <TouchableOpacity style={styles.button} onPress={this.addReview}>
+              <Text style={styles.buttonText}>Add Review</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -54,5 +68,19 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     margin: 20,
+  },
+  button: {
+    borderWidth: 1,
+    borderColor: '#0066cc',
+    borderRadius: 14,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    backgroundColor: '#fff',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#0066cc',
+    fontSize: 12,
+    textAlign: 'center',
   },
 });
