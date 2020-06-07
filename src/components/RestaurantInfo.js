@@ -1,4 +1,4 @@
-import Constants from 'expo-constants';
+import getUrl from './BaseUrl';
 import React, { Component } from 'react';
 import {
   Image,
@@ -9,12 +9,11 @@ import {
   View,
 } from 'react-native';
 import Stars from './Stars';
+import getUrl from './BaseUrl';
 
 export default class RestaurantInfo extends Component {
   getImageUri(imageName) {
-    return Constants.isDevice
-      ? `http://rupesh-home-pc:3000/images/${imageName}`
-      : `http://10.0.2.2:3000/images/${imageName}`;
+    return getUrl(`images/${imageName}`);
   }
 
   addReview = () => {

@@ -1,26 +1,16 @@
 import axios from 'axios';
 import Header from 'components/Header';
 import RestaurantRow from 'components/RestaurantRow';
-import Constants from 'expo-constants';
 import PizzaImage from 'images/pizza.png';
-import getUrl from './BaseUrl';
 import React, { Component } from 'react';
 import { FlatList, Image, StyleSheet, TextInput, View } from 'react-native';
+import getUrl from './BaseUrl';
 
 export default class RestaurantList extends Component {
   state = {
     search: null,
     restaurants: [],
   };
-
-  isSimulator() {
-    console.log(
-      `running in  ${
-        Constants.deviceName
-      } and it is an emulator=${!Constants.isDevice}`
-    );
-    return !Constants.isDevice;
-  }
 
   componentDidMount() {
     axios

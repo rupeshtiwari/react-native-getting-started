@@ -1,6 +1,5 @@
 import { FontAwesome } from '@expo/vector-icons';
 import axios from 'axios';
-import Constants from 'expo-constants';
 import React, { Component } from 'react';
 import {
   ActivityIndicator,
@@ -12,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import getUrl from './BaseUrl';
 
 export default class AddReview extends Component {
   state = {
@@ -22,9 +22,7 @@ export default class AddReview extends Component {
   };
 
   get submitUrl() {
-    return Constants.isDevice
-      ? 'http://rupesh-home-pc:3000/review'
-      : 'http://10.0.2.2:3000/review';
+    return getUrl('review');
   }
 
   componentDidMount() {

@@ -458,3 +458,6 @@ So run below script to open developermenu
   - get & set from async storage
   
 ### Chapter-24 Change the splash screen for iOS Apps built with React Native
+
+#### Requirement
+- BaseURl that works in ios and android and simulator 
