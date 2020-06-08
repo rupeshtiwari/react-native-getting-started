@@ -557,6 +557,8 @@ make sure `slug` should match pattern `^[a-zA-Z0-9_\-]+\$`.
 
 ### Chapter-29 Building Stand alone app in local machine.
 
+- You Need IOS MAchine for this.
+
 We will use `turtle cli` to build `apk` file for android in local machine.
 https://docs.expo.io/distribution/turtle-cli/?redirected
 
