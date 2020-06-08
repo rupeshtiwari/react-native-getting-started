@@ -558,11 +558,12 @@ We will use `turtle cli` to build `apk` file for android in local machine.
 https://docs.expo.io/distribution/turtle-cli/?redirected
 
 #### Prerequisites
+
 You'll need to have these things installed:
 
 - bash
 - node.js (version 8 or newer) [download the latest version of Node.js.](https://nodejs.org/en/)
- **For Android builds**
+  **For Android builds**
 - macOS or Linux
 - [Java Development Kit (version 8)](https://jdk.java.net/)
   **For iOS builds**
@@ -571,38 +572,54 @@ You'll need to have these things installed:
 - fastlane - [see how to install it](https://docs.fastlane.tools/getting-started/ios/setup/#installing-fastlane)
 
 #### Turtle CLI
+
 - Install Turtle CLI by running:
-`$ npm install -g turtle-cli`
+  `$ npm install -g turtle-cli`
 - Run `turtle setup:android --sdk-version 30.0.0`
-We are in expo therefore, we will use Expo SDK version of turtle to expedite build process. 
+  We are in expo therefore, we will use Expo SDK version of turtle to expedite build process.
 
 If you are not using Expo: Run `turtle setup:android` to verify everything is installed correctly. This step is optional and is also performed during the first run of the Turtle CLI. Please note that the Android setup command downloads, installs, and configures the appropriate versions of the Android SDK and NDK. for ios run `turtle setup:ios`
 
 #### Building for Android
+
 Before starting the build, prepare the following things:
+
 - Keystore
 - Keystore alias
 - Keystore password and key password
 
 **Creating Keystore key & Password**
-- Find `keytool.ex` at "C:\Program Files (x86)\Java\jre1.8.0_251\bin" location. 
+
+- Find `keytool.ex` at "C:\Program Files (x86)\Java\jre1.8.0_251\bin" location.
 - ![](https://i.imgur.com/fYyWfaC.png)
 - Install JAVA if you dont have [Download java for windows.](https://www.java.com/en/download/)
 - Check to see if the keytool command
 - Run `cd C:\Program Files (x86)\Java\jre1.8.0_251\bin\`
-- Run ` .\keytool`
-- Then, **generate a new signing key** with `.\keytool -genkey -v -keystore my-release-key.keystore -alias mykeyalias -keyalg RSA -keysize 2048 -validity 10000` 
+- Run `.\keytool`
+- Then, **generate a new signing key** with `.\keytool -genkey -v -keystore my-release-key.keystore -alias mykeyalias -keyalg RSA -keysize 2048 -validity 10000`
 - Enter key **password** as well as the information about who is requesting the key. This will generate a 2048 bit RSA key that you want to make sure to keep private.
 - It's also important to back up this keystore file and keep it secure, because if you ever have to change it, you'll have to rerelease your app and lose all the old downloads and ratings on the Play Store.
 - ![](https://i.imgur.com/W9h00tl.png)
-- It will create `Storing my-release-key.keystore` 
+- It will create `Storing my-release-key.keystore`
 - `C:\Program Files (x86)\Java\jre1.8.0_251\bin\my-release-key.keystore`
 - ![](https://i.imgur.com/0vmgSWr.png)
 
-**Start the standalone build**
-- `turtle build:android \
-  --keystore-path /path/to/your/keystore.jks \
-  --keystore-alias PUT_KEYSTORE_ALIAS_HERE`
+**Start the standalone build using TurtleCli**
 
-- `turtle build:android \ --keystore-path /C:/Full Stack Master/keystore --keystore-alias FULLSTACK_MASTER`
+- Run From Project Root Folder: `yarn android`
+- Run From Project Root Folder: `expo export --public-url https://127.0.0.1/dist` (note the /dist path!)
+- Run From Project Root Folder:
 
+  ```powershell
+  $KEYSTORE_PATH="C:\Full Stack Master\keystore\my-release-key.keystore"
+  $KEYSTORE_ALIAS="FullStackMaster"
+  turtle build:android --keystore-path $KEYSTORE_PATH --keystore-alias $KEYSTORE_ALIAS --public-url https://127.0.0.1/dist/android-index.json -t apk | tee c:\temp\logs.txt
+  ```
+
+However below error is coming:
+
+```
+Failed to build standalone app
+  err: Error: We don't support running standalone app builds for this platform on your operating system
+
+```
