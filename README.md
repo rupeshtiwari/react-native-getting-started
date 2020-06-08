@@ -486,3 +486,26 @@ Pending...
 pending
 
 ### Chapter-27 App icon for android
+
+
+### Building Standalone Apps
+
+#### Step 1: Install Expo CLI 
+
+Run `npm install -g expo-cli` (or `yarn global add expo-cli`) to get it.
+
+Windows User follow this to install WSL in your machine
+**Install the Windows Subsystem for Linux**
+- Open powershell in admin mode
+- Run `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+- ![](https://i.imgur.com/Y9j5oa0.png)
+
+**Update to WSL 2**
+- Enable the 'Virtual Machine Platform' optional component
+- Open PowerShell as Administrator and run:
+- Run `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+- ![](https://i.imgur.com/OBF3C3M.png)
+
+**Restart your machine to complete the WSL install and update to WSL 2.**
+
+**Set WSL 2 as your default version**
