@@ -551,6 +551,9 @@ make sure `slug` should match pattern `^[a-zA-Z0-9_\-]+\$`.
   - Run `expo start -c` which will clear the cache for you and will fix the issue you have.
 - It will put u on queue and you have to check your account for build to finish
 - ![](https://i.imgur.com/j43q0rJ.png)
+- After 8 hours you can download your `apk` file
+- ![](https://i.imgur.com/oSwbu1H.png)
+- 
 
 ### Chapter-29 Building Stand alone app in local machine.
 
