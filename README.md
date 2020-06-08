@@ -481,26 +481,32 @@ Pending...
 - `expo add expo-splash-screen`
 - https://docs.expo.io/guides/splash-screens/?redirected
 
-
 ### Chapter-26 App icon for ios
+
 pending
 
 ### Chapter-27 App icon for android
 
+### Chapter-28 Building Standalone Apps using Expo
 
-### Building Standalone Apps
+https://docs.expo.io/distribution/building-standalone-apps/
 
-#### Step 1: Install Expo CLI 
+#### Step 1: Install Expo CLI
 
 Run `npm install -g expo-cli` (or `yarn global add expo-cli`) to get it.
 
 Windows User follow this to install WSL in your machine
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
 **Install the Windows Subsystem for Linux**
+
 - Open powershell in admin mode
 - Run `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
 - ![](https://i.imgur.com/Y9j5oa0.png)
 
 **Update to WSL 2**
+
 - Enable the 'Virtual Machine Platform' optional component
 - Open PowerShell as Administrator and run:
 - Run `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
@@ -508,4 +514,95 @@ Windows User follow this to install WSL in your machine
 
 **Restart your machine to complete the WSL install and update to WSL 2.**
 
-**Set WSL 2 as your default version**
+- Use Admin Powershell to run
+  `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
+  ![](https://i.imgur.com/FH4tQzX.png)
+
+#### Step 2 Configure app.json
+
+make sure `slug` should match pattern `^[a-zA-Z0-9_\-]+\$`.
+
+```json
+{
+  "expo": {
+    "name": "Your App Name",
+    "icon": "./path/to/your/app-icon.png",
+    "version": "1.0.0",
+    "slug": "My_Restaurant_Review",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    }
+  }
+}
+```
+
+#### Step 3. Start the build using Expo
+
+- Run `expo build:android`
+- Choose `apk`
+- login to expo account
+- keystore choose `let expo handle the process!`
+- If you see error `ECONNREFUSED 127.0.0.1:19001`
+  - Run `expo start -c` which will clear the cache for you and will fix the issue you have.
+- It will put u on queue and you have to check your account for build to finish
+- ![](https://i.imgur.com/j43q0rJ.png)
+
+### Chapter-29 Building Stand alone app in local machine.
+
+We will use `turtle cli` to build `apk` file for android in local machine.
+https://docs.expo.io/distribution/turtle-cli/?redirected
+
+#### Prerequisites
+You'll need to have these things installed:
+
+- bash
+- node.js (version 8 or newer) [download the latest version of Node.js.](https://nodejs.org/en/)
+ **For Android builds**
+- macOS or Linux
+- [Java Development Kit (version 8)](https://jdk.java.net/)
+  **For iOS builds**
+- macOS
+- Xcode (version 9.4.1 or newer) - make sure you have run it at least once and you have agreed to the license agreements. Alternatively you can run sudo xcodebuild -license.
+- fastlane - [see how to install it](https://docs.fastlane.tools/getting-started/ios/setup/#installing-fastlane)
+
+#### Turtle CLI
+- Install Turtle CLI by running:
+`$ npm install -g turtle-cli`
+- Run `turtle setup:android --sdk-version 30.0.0`
+We are in expo therefore, we will use Expo SDK version of turtle to expedite build process. 
+
+If you are not using Expo: Run `turtle setup:android` to verify everything is installed correctly. This step is optional and is also performed during the first run of the Turtle CLI. Please note that the Android setup command downloads, installs, and configures the appropriate versions of the Android SDK and NDK. for ios run `turtle setup:ios`
+
+#### Building for Android
+Before starting the build, prepare the following things:
+- Keystore
+- Keystore alias
+- Keystore password and key password
+
+**Creating Keystore key & Password**
+- Find `keytool.ex` at "C:\Program Files (x86)\Java\jre1.8.0_251\bin" location. 
+- ![](https://i.imgur.com/fYyWfaC.png)
+- Install JAVA if you dont have [Download java for windows.](https://www.java.com/en/download/)
+- Check to see if the keytool command
+- Run `cd C:\Program Files (x86)\Java\jre1.8.0_251\bin\`
+- Run ` .\keytool`
+- Then, **generate a new signing key** with `.\keytool -genkey -v -keystore my-release-key.keystore -alias mykeyalias -keyalg RSA -keysize 2048 -validity 10000` 
+- Enter key **password** as well as the information about who is requesting the key. This will generate a 2048 bit RSA key that you want to make sure to keep private.
+- It's also important to back up this keystore file and keep it secure, because if you ever have to change it, you'll have to rerelease your app and lose all the old downloads and ratings on the Play Store.
+- ![](https://i.imgur.com/W9h00tl.png)
+- It will create `Storing my-release-key.keystore` 
+- `C:\Program Files (x86)\Java\jre1.8.0_251\bin\my-release-key.keystore`
+- ![](https://i.imgur.com/0vmgSWr.png)
+
+**Start the standalone build**
+- `turtle build:android \
+  --keystore-path /path/to/your/keystore.jks \
+  --keystore-alias PUT_KEYSTORE_ALIAS_HERE`
+
+- `turtle build:android \ --keystore-path /C:/Full Stack Master/keystore --keystore-alias FULLSTACK_MASTER`
+
