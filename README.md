@@ -628,3 +628,10 @@ Failed to build standalone app
   err: Error: We don't support running standalone app builds for this platform on your operating system
 
 ```
+
+
+### Chapter 30-Using React native static server
+#### Requirement
+- replace express server
+- Make your app to serv restarurant objects from inline server in mobile app only. 
+- This did not work Leaving this chapter as it.
