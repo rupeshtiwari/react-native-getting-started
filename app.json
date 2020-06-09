@@ -21,9 +21,14 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    
+    "expo": {
+      "android": {
+        "package": "com.rupeshtiwari.restaurantreview",
+        "googleServicesFile": "./google-services.json"
+      }
+    },
     "android": {
-      "package": "com.rupeshtiwari.mytestaurantreview",
+      "package": "com.rupeshtiwari.restaurantreview",
       "versionCode": 1
     }
   }

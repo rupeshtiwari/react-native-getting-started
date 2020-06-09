@@ -635,3 +635,40 @@ Failed to build standalone app
 - replace express server
 - Make your app to serv restarurant objects from inline server in mobile app only. 
 - This did not work Leaving this chapter as it.
+
+
+### Chapter 31- React Native FireBase
+
+#### Requirement 
+- create server and serve restaurants
+
+#### Learning
+- React-native-firebase provides much faster performance (~2x) over the web SDK
+- Fully featured auto scaling backend for your users. That is what every entrepreneur wants. (scalable baas)
+
+**REf**: https://docs.expo.io/guides/setup-native-firebase/
+
+**Firebase SDK Setup**
+- Create Firebase project
+- If you have not done so already, create a Firebase project for your app by clicking on Add project in the [Firebase Console](https://console.firebase.google.com/).
+  - Go to [React Native  Firebase](https://rnfirebase.io/)
+  - Login with gmail account
+  - Create Project
+  - Link with Android app by clicking add app button
+  - Download the google-services.json file this file will have api_key.
+
+- Managed Workflow Setup
+- Open Project overview in the firebase console and click on the Android icon or + button to Add Firebase to your Android app.
+- Make sure that the Android package name is the same as the value of android.package in your app.json.
+- Register the app & download the config file by clicking "Download google-services.json" and drag the file into your Expo project folder.
+- Add the relative path to the Android google-services.json file to app.json.
+```json
+{
+  "expo": {
+    "android": {
+      "package": "com.mypackage.coolapp",
+      "googleServicesFile": "./google-services.json"
+    }
+  }
+}
+```
